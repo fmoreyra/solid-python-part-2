@@ -241,7 +241,10 @@
 						</code>
 					</pre>
 				</section>
-				<section>Ejemplo en Backend</section>
+				<section>Ejemplo en Backend
+
+					<img src="/dist/img/open-close backend.png" alt="Backend example" style="height: 729px; margin: 0 auto 4rem auto;">
+				</section>
 				<section>
 					<h4>Continuando con SOLID</h4>
 					<h1>Liskov Substitution Principle</h1>
@@ -264,6 +267,48 @@
 				<section>
 					<h2>Liskov Substitution Principle</h2>
 					Ejemplo
+				</section>
+				<section data-auto-animate>
+					<h2 data-id="code-title">Código que incumple LSP</h2>
+					<pre data-id="code-animation" style="width: 100%;"><code class="hljs" data-trim data-line-numbers="|1-5|7-15|17-21|">
+						class Bird {
+						  fly(speed) {
+						    return `Flying at ${speed} km/h`;
+						  }
+						}
+						
+						class Eagle extends Bird {
+						  eat() {
+							// ...
+						  }
+						
+						  fly(speed) {
+						    return `Soaring through the sky at ${speed}`;
+						  }
+						}
+						
+						// LSP Violation:
+						class Penguin extends Bird {
+						  fly() {
+						    return new Error("Sorry, I cant fly");
+						  }
+						}
+						</code>
+					</pre>
+				</section>
+				<section data-auto-animate>
+					<h2 data-id="code-title">Código que incumple LSP</h2>
+					<p data-id="code-title">Cómo podemos mejorarlo?</p>
+				</section>
+				<section data-auto-animate>
+					<h2 data-id="code-title">Muchas Gracias!</h2>
+					<p data-id="code-title">Referencias:</p>
+					<p>Libro: Clean Code in Python: Refactor your legacy code base, Mariano Anaya (Packt)</p>
+					<p><a href="https://github.com/PacktPublishing/Clean-Code-in-Python">Repositorio con ejemplos del código</a></p>
+					<p><a href="https://carstenbehrens.com/liskov-substitution-principle/#:~:text=THE%20LISKOV%20SUBSTITUTION%20PRINCIPLE&text=In%20the%20context%20of%20JavaScript%2C%20this%20means%20that%3A,the%20same%20number%20of%20arguments.&text=The%20return%20type%20of%20the,method%20of%20the%20base%20class.">
+						Ejemplo Liskov en JS
+						</a>
+					</p>
 				</section>
 			</div>
 		</div>
